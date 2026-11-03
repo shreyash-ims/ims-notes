@@ -1,0 +1,199 @@
+echo $SHELL      # Show current shell
+which bash       # Show bash location
+pwd              # Present working directory
+mkdir dir_name   # Create directory
+cd dir_name      # Change directory
+vim file.sh      # Create script
+cat file.sh      # View script
+chmod +x file.sh # Make executable
+sh file.sh       # Run script
+./file.sh        # Run executable script
+================================================
+
+1. Accept Two Numbers and Perform Arithmetic Operations Shell
+#!/bin/bash
+ 
+echo "Enter First Number:"
+read a
+ 
+echo "Enter Second Number:"
+read b
+ 
+echo "Addition = $((a+b))"
+echo "Subtraction = $((a-b))"
+echo "Multiplication = $((a*b))"
+echo "Division = $((a/b))"
+
+-----------------------------------------------------------------
+2. Accept Three Subject Marks and Print Average & Result Shell
+#!/bin/bash
+ 
+echo "Enter Marks of Subject 1:"
+read s1
+ 
+echo "Enter Marks of Subject 2:"
+read s2
+ 
+echo "Enter Marks of Subject 3:"
+read s3
+ 
+avg=$(((s1+s2+s3)/3))
+ 
+echo "Average = $avg"
+ 
+if [ $avg -ge 60 ]
+then
+echo "PASS"
+else
+echo "FAIL"
+fi
+-------------------------------------------------------- 
+3. Delete All Empty Subdirectories of a Given Folder Shell
+#!/bin/bash
+ 
+echo "Enter Folder Name:"
+read folder
+ 
+find $folder -type d -empty -delete
+ 
+echo "Empty folders deleted."
+
+
+------------------------------------------------------------
+4. Check Whether File is Regular, Directory or Executable Shell
+#!/bin/bash
+ 
+echo "Enter File Name from /root:"
+read fname
+ 
+if [ -f /root/$fname ]
+then
+echo "Regular File"
+fi
+ 
+if [ -d /root/$fname ]
+then
+echo "Directory File"
+fi
+ 
+if [ -x /root/$fname ]
+then
+echo "Executable File"
+fi
+-----------------------------------------------------------
+5. Find Area of Square, Rectangle, Triangle and Circle Shell
+#!/bin/bash
+ 
+echo "Enter Side of Square:"
+read s
+echo "Area of Square = $((s*s))"
+ 
+echo "Enter Length:"
+read l
+echo "Enter Breadth:"
+read b
+echo "Area of Rectangle = $((l*b))"
+ 
+echo "Enter Base:"
+read base
+echo "Enter Height:"
+read h
+echo "Area of Triangle = $((base*h/2))"
+ 
+echo "Enter Radius:"
+read r
+echo "Area of Circle = $(echo "3.14*$r*$r" | bc)"
+-------------------------------------------------------
+6. Find All Empty Files in /root Shell
+#!/bin/bash
+ 
+echo "Empty Files in /root"
+ 
+find /root -type f -empty
+---------------------------------------------------------
+7. Check Even or Odd Number Shell
+#!/bin/bash
+ 
+echo "Enter Number:"
+read num
+ 
+if [ $((num%2)) -eq 0 ]
+then
+echo "Even Number"
+else
+echo "Odd Number"
+fi
+-----------------------------------------------------------
+8. Character Type Checker Using Case Statement Shell
+#!/bin/bash
+ 
+echo "Enter a Character:"
+read ch
+ 
+case $ch in
+ 
+[aAeEiIoOuU])
+echo "Vowel"
+;;
+ 
+[a-zA-Z])
+echo "Consonant"
+;;
+ 
+[0-9])
+echo "Digit"
+;;
+ 
+*)
+echo "Special Character"
+;;
+ 
+esac
+----------------------------------------------------------------
+10. Linux Command Information Using Case Statement
+#!/bin/bash
+ 
+echo "1. pwd"
+echo "2. date"
+echo "3. whoami"
+echo "4. hostname"
+ 
+echo "Enter Choice:"
+read ch
+ 
+case $ch in
+ 
+1)
+pwd
+;;
+ 
+2)
+date
+;;
+ 
+3)
+whoami
+;;
+ 
+4)
+hostname
+;;
+ 
+*)
+echo "Invalid Choice"
+;;
+ 
+esac
+------------------------------------------------
+Compile/Run Commands for All Scripts
+Shell
+vim script.sh
+ 
+chmod +x script.sh
+ 
+./script.sh
+
+or
+
+Shell
+sh script.sh
